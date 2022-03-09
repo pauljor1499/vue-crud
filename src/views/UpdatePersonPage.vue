@@ -1,8 +1,6 @@
 <template>
-  <div class="home">
-   
-    <h1>Home Page</h1>
-
+  <div class="update">
+    <h1>Update Person</h1>
   </div>
 </template>
 
@@ -11,7 +9,7 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'Home',
+  name: 'Update',
   // components: {
   //   HelloWorld
   // }
@@ -19,3 +17,4 @@ export default {
 
 }
 </script>
+
