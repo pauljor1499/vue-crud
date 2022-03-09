@@ -1,21 +1,19 @@
 <template>
-  <div class="home">
-   
-    <h1>Home Page</h1>
-
+  <div class="delete">
+    <h1>Person List</h1>
+    <!-- <PersonData > -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import PersonData from "@/database/PersonData.vue";
 
 export default {
-  name: 'Home',
-  // components: {
-  //   HelloWorld
-  // }
-
-
-}
+  name: "Home",
+  components: {
+    PersonData,
+  },
+};
 </script>
+
