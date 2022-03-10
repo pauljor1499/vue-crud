@@ -1,7 +1,7 @@
 <template>
   <div class="delete">
     <h1>Person List</h1>
-    <button @click="setPerson">Add Person</button>
+    <n-button @click="setPerson">Add Person</n-button>
     <PersonData />
   </div>
 </template>
@@ -26,4 +26,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.n-button {
+  background-color: blue;
+}
+</style>
 
