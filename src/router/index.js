@@ -5,13 +5,13 @@ import update from '../views/UpdatePersonPage.vue'
 import remove from '../views/RemovePersonPage.vue'
 import viewList from '../views/ViewPersonList.vue'
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
   },
-  
+
   {
     path: '/add',
     name: 'Add',

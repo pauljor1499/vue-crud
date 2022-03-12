@@ -1,3 +1,5 @@
+import { person } from "@/database/Person.js";
+
 export const persons = [
   {
     firstName: "Frank",

@@ -2,16 +2,17 @@
   <div class="delete">
     <h1>Person List</h1>
     <button @click="setPerson">Add Person</button>
+    <button @click="goToPage">Goooo</button>
     <PersonData />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import PersonData from "@/database/PersonData.vue"; //component no {}
 import { ref } from "@vue/reactivity";
 import { data_api } from "@/database/api.js";
 import { person } from "@/database/Person.js";
+import Router from "../router";
 
 export default {
   name: "Home",
@@ -20,17 +21,19 @@ export default {
   },
 
   setup() {
-    // const setPerson = () => {
-    //   const name = ref(prompt("First name:"));
-    // };
-
     const my_API = new data_api();
 
     const setPerson = () => {
       my_API.addPerson("1", "2", "3", "4");
     };
 
-    return { setPerson };
+    const goToPage = () => {
+      Router.push({ name: "ViewList" });
+      // this.$router.push({ path: "/viewList" });
+      // alert("asdads");
+    };
+
+    return { setPerson, goToPage };
   },
 };
 </script>

@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    <p ref="p">Hello world!</p>
+    <button @click="setPerson">ADD PERSON</button>
     <table>
       <thead>
         <tr>
@@ -9,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" :key="user.id">
+        <tr v-for="user in users" :key="user.id" ref="users">
           <td>{{ user.firstName }} {{ user.lastName }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.role }}</td>
@@ -23,7 +25,6 @@
 <script>
 import { ref } from "vue";
 import { data_api } from "@/database/api.js";
-// import { persons } from "../database/PersonList.js";
 
 export default {
   name: "PersonData",
@@ -32,9 +33,22 @@ export default {
     // const users = ref(persons);
     const my_API = new data_api();
     const users = ref(my_API.getPersonList());
+    const p = ref(null);
+
+    const setPerson = () => {
+      my_API.addPerson("1", "2", "3", "4");
+      console.log((users.value.textContent = "asdasdsad"));
+    };
+
+    const setReference = () => {
+      p.value.textContent = "asdadsadas";
+    };
 
     return {
       users,
+      setPerson,
+      p,
+      setReference,
     };
   },
 };
@@ -61,6 +75,7 @@ table,
 th,
 td {
   margin-top: 5%;
+  margin-bottom: 10%;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid black;

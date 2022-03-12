@@ -1,20 +1,18 @@
 <template>
   <div class="delete">
     <h1>Person List</h1>
+    <PersonData />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import PersonData from "@/database/PersonData.vue";
 
 export default {
-  name: 'Delete',
-  // components: {
-  //   HelloWorld
-  // }
-
-
-}
+  name: "ViewList",
+  components: {
+    PersonData,
+  },
+};
 </script>
 
