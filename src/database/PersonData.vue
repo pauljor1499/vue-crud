@@ -1,33 +1,41 @@
 <template>
-  <div class="hello">
+  <div class="container">
     <table>
-      <tr>
-        <th>First name</th>
-        <th>Middle name</th>
-        <th>Last name</th>
-        <th>Age</th>
-      </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-        <td>13</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
-        <td>12</td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="user in users" :key="user.id">
+          <td>{{ user.firstName }} {{ user.lastName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td><button>Edit</button></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
+import { data_api } from "@/database/api.js";
+// import { persons } from "../database/PersonList.js";
+
 export default {
-  name: "HelloWorld",
-  props: {
-    // msg: String,
+  name: "PersonData",
+
+  setup() {
+    // const users = ref(persons);
+    const my_API = new data_api();
+    const users = ref(my_API.getPersonList());
+
+    return {
+      users,
+    };
   },
 };
 </script>
@@ -52,7 +60,7 @@ a {
 table,
 th,
 td {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid black;

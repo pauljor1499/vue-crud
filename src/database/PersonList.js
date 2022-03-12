@@ -1,8 +1,33 @@
-export var PersonList = [
+export const persons = [
   {
-    emp_id: 'XYZ-014',
-    emp_first_name: 'Paul Vincent',
-    emp_middle_name: 'Lao',
-    emp_last_name: 'Jor',
+    firstName: "Frank",
+    lastName: "Murphy",
+    email: "frank.murphy@test.com",
+    role: "User",
+  },
+  {
+    firstName: "Vic",
+    lastName: "Reynolds",
+    email: "vic.reynolds@test.com",
+    role: "Admin",
+  },
+  {
+    firstName: "Gina",
+    lastName: "Jabowski",
+    email: "gina.jabowski@test.com",
+    role: "Admin",
+  },
+  {
+    firstName: "Jessi",
+    lastName: "Glaser",
+    email: "jessi.glaser@test.com",
+    role: "User",
+  },
+  {
+    firstName: "Jay",
+    lastName: "Bilzerian",
+    email: "jay.bilzerian@test.com",
+    role: "User",
   },
 ];
+

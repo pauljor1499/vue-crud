@@ -1,14 +1,14 @@
-export class PersonList {
+export class person {
     //attributes
     person_firstname;
-    person_middlename;
     person_lastname;
-    person_age;
+    person_email;
+    person_role;
 
-    constructor(firstname, middlename, lastname, age) {
+    constructor(firstname, lastname, email, role) {
         this.person_firstname = firstname;
-        this.person_middlename = middlename;
         this.person_lastname = lastname;
-        this.person_age = age;
+        this.person_email = email;
+        this.person_role = role;
     }
 }
