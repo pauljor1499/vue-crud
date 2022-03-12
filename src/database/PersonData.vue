@@ -2,6 +2,7 @@
   <div class="container">
     <p ref="p">Hello world!</p>
     <button @click="setPerson">ADD PERSON</button>
+    <button @click="setReference">CHANGE TEXT</button>
     <table>
       <thead>
         <tr>
