@@ -1,5 +1,3 @@
-import { person } from "@/database/Person.js";
-
 export let persons = [
   {
     FIRSTNAME: "Frank",

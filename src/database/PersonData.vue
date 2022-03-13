@@ -1,8 +1,7 @@
 <template>
   <div class="container">
-    <p ref="p">Hello world!</p>
+    <h1>PersonData</h1>
     <button @click="setPerson">ADD PERSON</button>
-    <button @click="setReference">CHANGE TEXT</button>
     <table>
       <thead>
         <tr>
@@ -20,6 +19,8 @@
         </tr>
       </tbody>
     </table>
+    <br />
+    <!-- <p ref="user1">{{ user1 }}</p> -->
   </div>
 </template>
 
@@ -31,31 +32,22 @@ export default {
   name: "PersonData",
 
   setup() {
-    let my_API = new data_api();
+    const my_API = new data_api();
     let users = [];
     users = my_API.getPersonList();
-    const p = ref(null);
+    let user1 = ref(user1);
+    let new_person = { FIRSTNAME: "1", LASTNAME: "1", EMAIL: "1", ROLE: "1" };
 
     function setPerson() {
-      users = my_API.addPerson({
-        FIRSTNAME: "1",
-        LASTNAME: "2",
-        EMAIL: "3",
-        ROLE: "4",
-      });
-
+      users = my_API.addPerson(new_person);
       console.log(users);
-    }
-
-    function setReference() {
-      p.value.textContent = "asdadsadas";
     }
 
     return {
       users,
+      new_person,
+      user1,
       setPerson,
-      p,
-      setReference,
     };
   },
 };

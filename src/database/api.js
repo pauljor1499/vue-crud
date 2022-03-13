@@ -1,6 +1,4 @@
 import { persons } from '../database/PersonList.js'
-import { person } from "@/database/Person.js";
-import { ref } from 'vue';
 import Router from "../router";
 
 export class data_api {

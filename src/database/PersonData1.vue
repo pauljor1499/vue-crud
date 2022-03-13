@@ -54,9 +54,9 @@ export default {
     },
   },
 
-  created() {
-    this.users = data_api.prototype.getPersonList();
-  },
+  //   created() {
+  //     this.users = data_api.prototype.getPersonList();
+  //   },
 };
 </script>
 
