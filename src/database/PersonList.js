@@ -1,35 +1,35 @@
 import { person } from "@/database/Person.js";
 
-export const persons = [
+export let persons = [
   {
-    firstName: "Frank",
-    lastName: "Murphy",
-    email: "frank.murphy@test.com",
-    role: "User",
+    FIRSTNAME: "Frank",
+    LASTNAME: "Murphy",
+    EMAIL: "frank.murphy@test.com",
+    ROLE: "User",
   },
   {
-    firstName: "Vic",
-    lastName: "Reynolds",
-    email: "vic.reynolds@test.com",
-    role: "Admin",
+    FIRSTNAME: "Vic",
+    LASTNAME: "Reynolds",
+    EMAIL: "vic.reynolds@test.com",
+    ROLE: "Admin",
   },
   {
-    firstName: "Gina",
-    lastName: "Jabowski",
-    email: "gina.jabowski@test.com",
-    role: "Admin",
+    FIRSTNAME: "Gina",
+    LASTNAME: "Jabowski",
+    EMAIL: "gina.jabowski@test.com",
+    ROLE: "Admin",
   },
   {
-    firstName: "Jessi",
-    lastName: "Glaser",
-    email: "jessi.glaser@test.com",
-    role: "User",
+    FIRSTNAME: "Jessi",
+    LASTNAME: "Glaser",
+    EMAIL: "jessi.glaser@test.com",
+    ROLE: "User",
   },
   {
-    firstName: "Jay",
-    lastName: "Bilzerian",
-    email: "jay.bilzerian@test.com",
-    role: "User",
+    FIRSTNAME: "Jay",
+    LASTNAME: "Bilzerian",
+    EMAIL: "jay.bilzerian@test.com",
+    ROLE: "User",
   },
 ];
 

@@ -1,6 +1,7 @@
 import { persons } from '../database/PersonList.js'
 import { person } from "@/database/Person.js";
 import { ref } from 'vue';
+import Router from "../router";
 
 export class data_api {
 
@@ -8,14 +9,17 @@ export class data_api {
         return persons;
     }
 
-    addPerson(add_firstname, add_lastname, add_email, add_role) {
+    addPerson(person) {
         persons.push({
-            firstName: add_firstname,
-            lastName: add_lastname,
-            email: add_email,
-            role: add_role
+            FIRSTNAME: person.FIRSTNAME,
+            LASTNAME: person.LASTNAME,
+            EMAIL: person.EMAIL,
+            ROLE: person.ROLE
         });
         alert('Person successfully added.');
+        return persons;
+        // Router.push({ name: "ViewList" });
+        // Router.push({ name: "Home" });
         // this.location.back;
     }
 }

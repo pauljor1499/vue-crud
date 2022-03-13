@@ -1,8 +1,8 @@
 <template>
   <div class="container">
+    <h1>Person 1</h1>
     <p ref="p">Hello world!</p>
-    <button @click="setPerson">ADD PERSON</button>
-    <button @click="setReference">CHANGE TEXT</button>
+    <button @click="this.addPerson()">ADD PERSON</button><br />
     <table>
       <thead>
         <tr>
@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(user, index) in users" :key="index">
+        <tr v-for="(user, index) in this.getPersons" :key="index">
           <td>{{ user.FIRSTNAME }} {{ user.LASTNAME }}</td>
           <td>{{ user.EMAIL }}</td>
           <td>{{ user.ROLE }}</td>
@@ -24,39 +24,38 @@
 </template>
 
 <script>
-import { ref } from "vue";
 import { data_api } from "@/database/api.js";
 
 export default {
   name: "PersonData",
 
-  setup() {
-    let my_API = new data_api();
-    let users = [];
-    users = my_API.getPersonList();
-    const p = ref(null);
+  data() {
+    return {
+      users: [],
+    };
+  },
 
-    function setPerson() {
-      users = my_API.addPerson({
+  methods: {
+    addPerson() {
+      this.users.push({
         FIRSTNAME: "1",
         LASTNAME: "2",
         EMAIL: "3",
         ROLE: "4",
       });
+      console.log(this.users);
+    },
+  },
 
-      console.log(users);
-    }
+  computed: {
+    getPersons: function () {
+      this.users = data_api.prototype.getPersonList();
+      return this.users;
+    },
+  },
 
-    function setReference() {
-      p.value.textContent = "asdadsadas";
-    }
-
-    return {
-      users,
-      setPerson,
-      p,
-      setReference,
-    };
+  created() {
+    this.users = data_api.prototype.getPersonList();
   },
 };
 </script>
