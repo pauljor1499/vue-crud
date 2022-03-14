@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import add from '../views/AddPersonPage.vue'
 import update from '../views/UpdatePersonPage.vue'
-import remove from '../views/RemovePersonPage.vue'
+import remove from '../views/DeletePerson.vue'
 import viewList from '../views/ViewPersonList.vue'
 
 export const routes = [

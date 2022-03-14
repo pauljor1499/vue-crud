@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import PersonData from "@/database/PersonData.vue"; //component no {}
-import PersonData1 from "@/database/PersonData1.vue";
+import PersonData from "@/components/PersonData.vue"; //component no {}
+import PersonData1 from "@/components/PersonData1.vue";
 import { ref } from "@vue/reactivity";
 import Router from "../router";
 
@@ -19,9 +19,7 @@ export default {
     PersonData,
   },
 
-  setup() {
-
-  },
+  setup() {},
 };
 </script>
 

@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <button @click="setPerson">ADD PERSON</button>
+    <AddNewPerson />
+    <!-- <n-button @click="showModal = true">Add Person</n-button> -->
     <table>
       <thead>
         <tr>
@@ -19,31 +20,35 @@
       </tbody>
     </table>
     <br />
-    <input type="text" v-model="users[0].FIRSTNAME" /><br />
+    <!-- <input type="text" v-model="users[0].FIRSTNAME" /><br /> -->
   </div>
 </template>
 
 <script>
-import { persons } from "../database/PersonList.js";
+import { persons } from "./PersonList.js";
+import AddNewPerson from "./AddNewPerson.vue";
 import { ref } from "vue";
 
 export default {
   name: "PersonData",
+  components: {
+    AddNewPerson,
+  },
 
   setup() {
     let users = ref(persons);
     let new_person = { FIRSTNAME: "1", LASTNAME: "1", EMAIL: "1", ROLE: "1" };
     let sample = ref("asdsadasd");
 
-    function setPerson() {
+    function addPerson() {
       users.value.push(new_person);
-      console.log(users);
+      return true;
     }
 
     return {
       users,
       new_person,
-      setPerson,
+      addPerson,
       sample,
     };
   },

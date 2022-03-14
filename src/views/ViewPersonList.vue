@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import PersonData1 from "@/database/PersonData.vue";
+import PersonData1 from "../components/PersonData.vue";
 
 export default {
   name: "ViewList",
