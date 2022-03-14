@@ -1,17 +1,17 @@
 <template>
   <div class="delete">
     <h1>Person List</h1>
-    <PersonData />
+    <PersonData1 />
   </div>
 </template>
 
 <script>
-import PersonData from "@/database/PersonData.vue";
+import PersonData1 from "@/database/PersonData.vue";
 
 export default {
   name: "ViewList",
   components: {
-    PersonData,
+    PersonData1,
   },
 };
 </script>

@@ -11,7 +11,6 @@
 import PersonData from "@/database/PersonData.vue"; //component no {}
 import PersonData1 from "@/database/PersonData1.vue";
 import { ref } from "@vue/reactivity";
-import { data_api } from "@/database/api.js";
 import Router from "../router";
 
 export default {
@@ -21,19 +20,7 @@ export default {
   },
 
   setup() {
-    const my_API = new data_api();
 
-    const setPerson = () => {
-      my_API.addPerson("1", "2", "3", "4");
-    };
-
-    const goToPage = () => {
-      Router.push({ name: "ViewList" });
-      // this.$router.push({ path: "/viewList" });
-      // alert("asdads");
-    };
-
-    return { setPerson, goToPage };
   },
 };
 </script>

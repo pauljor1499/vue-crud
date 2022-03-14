@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1>PersonData</h1>
     <button @click="setPerson">ADD PERSON</button>
     <table>
       <thead>
@@ -20,34 +19,32 @@
       </tbody>
     </table>
     <br />
-    <!-- <p ref="user1">{{ user1 }}</p> -->
+    <input type="text" v-model="users[0].FIRSTNAME" /><br />
   </div>
 </template>
 
 <script>
+import { persons } from "../database/PersonList.js";
 import { ref } from "vue";
-import { data_api } from "@/database/api.js";
 
 export default {
   name: "PersonData",
 
   setup() {
-    const my_API = new data_api();
-    let users = [];
-    users = my_API.getPersonList();
-    let user1 = ref(user1);
+    let users = ref(persons);
     let new_person = { FIRSTNAME: "1", LASTNAME: "1", EMAIL: "1", ROLE: "1" };
+    let sample = ref("asdsadasd");
 
     function setPerson() {
-      users = my_API.addPerson(new_person);
+      users.value.push(new_person);
       console.log(users);
     }
 
     return {
       users,
       new_person,
-      user1,
       setPerson,
+      sample,
     };
   },
 };

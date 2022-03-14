@@ -24,8 +24,6 @@
 </template>
 
 <script>
-import { data_api } from "@/database/api.js";
-
 export default {
   name: "PersonData",
 
