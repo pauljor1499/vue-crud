@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <AddNewPerson />
     <!-- <n-button @click="showModal = true">Add Person</n-button> -->
     <table>
       <thead>
@@ -26,14 +25,11 @@
 
 <script>
 import { persons } from "./PersonList.js";
-import AddNewPerson from "./AddNewPerson.vue";
 import { ref } from "vue";
 
 export default {
   name: "PersonData",
-  components: {
-    AddNewPerson,
-  },
+  components: {},
 
   setup() {
     let users = ref(persons);

@@ -6,13 +6,9 @@
 </template>
 
 <script>
-import Sample from "../components/SampleComponent.vue";
-
 export default {
   name: "Delete",
-  components: {
-    Sample,
-  },
+  components: {},
 };
 </script>
 

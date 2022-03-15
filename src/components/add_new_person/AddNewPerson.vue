@@ -14,25 +14,10 @@
     :segmented="segmented"
   >
     <template #header-extra></template>
-    <form>
-      <n-label for="fname">First name:</n-label><br />
-      <n-input type="text" id="fname" name="fname" required /><br />
-
-      <n-label for="lname">Last name:</n-label><br />
-      <n-input type="text" id="lname" name="fname" required /><br />
-
-      <n-label for="email">Email:</n-label><br />
-      <n-input type="email" id="email" name="fname" required /><br />
-
-      <n-label for="role">Role:</n-label><br />
-      <n-input type="text" id="role" name="fname" required /><br />
-
-      <n-form-item>
-        <n-button @click="handleValidateClick"> Validate </n-button>
-      </n-form-item>
-    </form>
+    <!-- Form -->
+    <!-- Form End -->
     <template #footer>
-      <n-button>CANCEL</n-button>
+      <n-button @click="showModal = false">CANCEL</n-button>
       <n-button
         class="right_button"
         type="primary"
@@ -45,7 +30,7 @@
 </template>
 
 <script>
-import { persons } from "./PersonList.js";
+import { persons } from "../PersonList.js";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
