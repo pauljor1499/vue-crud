@@ -15,6 +15,7 @@
   >
     <template #header-extra></template>
     <!-- Form -->
+    <Form />
     <!-- Form End -->
     <template #footer>
       <n-button @click="showModal = false">CANCEL</n-button>
@@ -32,9 +33,13 @@
 <script>
 import { persons } from "../PersonList.js";
 import { defineComponent, ref } from "vue";
+import Form from "./Form.vue";
 
 export default defineComponent({
   name: "PersonData",
+  components: {
+    Form,
+  },
 
   setup() {
     let users = ref(persons);
