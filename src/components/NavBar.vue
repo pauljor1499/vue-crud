@@ -36,6 +36,14 @@ export default {};
 </script>
 
 <style scoped>
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
+}
 /* nav */
 nav {
   border-bottom: 1px solid #dee2e6;
