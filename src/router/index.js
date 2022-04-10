@@ -2,8 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import add from '../views/AddPersonPage.vue'
 import update from '../views/UpdatePersonPage.vue'
-import remove from '../views/DeletePerson.vue'
+import remove from '../views/RemovePerson.vue'
 import viewList from '../views/ViewPersonList.vue'
+import Modal from '../components/add_new_person/Modal.vue'
 
 export const routes = [
   {
@@ -35,6 +36,13 @@ export const routes = [
     name: 'ViewList',
     component: viewList
   },
+
+  {
+    path: '/modal',
+    name: 'Modal',
+    component: Modal
+  },
+
 ]
 
 const router = createRouter({

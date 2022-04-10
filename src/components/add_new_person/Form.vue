@@ -6,19 +6,19 @@
 
     <n-form>
       <label for="firstname">First Name:</label><br />
-      <input type="text" v-model="firstname" required />
+      <n-input type="text" v-model="firstname" required />
       <br /><br />
 
       <label for="lastname">Last Name:</label><br />
-      <input type="text" v-model="lastname" required />
+      <n-input type="text" v-model="lastname" required />
       <br /><br />
 
       <label for="email">Email Address:</label><br />
-      <input type="text" v-model="email" required /> <br />
+      <n-input type="text" v-model="email" required /> <br />
       <br />
 
       <label for="password">Password:</label><br />
-      <input type="text" v-model="password" required /><br />
+      <n-input type="text" v-model="password" required /><br />
       <br />
     </n-form>
   </div>

@@ -6,7 +6,7 @@
     <router-link to="/remove">Delete</router-link> |
     <router-link to="/viewList">View List</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>

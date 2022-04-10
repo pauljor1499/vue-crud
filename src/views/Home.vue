@@ -1,11 +1,9 @@
 <template>
-  <div class="delete">
-    <!-- <h1>Person List</h1> -->
-    <!-- <button @click="setPerson">Add Person</button>
+  <!-- <h1>Person List</h1> -->
+  <!-- <button @click="setPerson">Add Person</button>
     <button @click="goToPage">Goooo</button> -->
-    <AddNewPerson />
-    <PersonData />
-  </div>
+  <AddNewPerson />
+  <PersonData />
 </template>
 
 <script>
