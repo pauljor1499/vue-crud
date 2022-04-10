@@ -4,7 +4,10 @@
   <body>
     <div class="container">
       <!-- Side bar -->
-      <div class="sidebar">
+      <div
+        class="sidebar-show"
+        :class="sidebar_status ? 'drawerOn' : 'drawerOff'"
+      >
         <div class="profile">
           <img
             src="https://thetaiwantimes.com/wp-content/uploads/2020/06/President_Rodrigo_Duterte-1.jpg"
@@ -47,9 +50,22 @@
       </div>
       <!-- Board -->
       <div class="board">
+        <div class="hamburger">
+          <button @click="sidebar_status = !sidebar_status">
+            <svg
+              :class="sidebar_status ? 'show' : 'hide'"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
+              />
+            </svg>
+          </button>
+        </div>
         <h1>Welcome to your Dashboard!</h1>
         <!-- Card -->
-        <div class="row">
+        <div :class="sidebar_status ? 'row' : 'row-sidebar-hide'">
           <div class="column">
             <n-card
               title="Subjects"
@@ -110,6 +126,7 @@
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
 import NavBar from "../components/NavBar.vue";
 
 export default {
@@ -118,7 +135,11 @@ export default {
     NavBar,
   },
 
-  setup() {},
+  setup() {
+    var sidebar_status = ref(true);
+
+    return { sidebar_status };
+  },
 };
 </script>
 
@@ -132,20 +153,19 @@ export default {
   font-family: "Open Sans", sans-serif;
 }
 
-.sidebar {
+.sidebar-show {
   background-color: #253759;
   width: 280px;
   height: 100%;
-  transition: all 0.5s ease;
   text-align: center;
 }
 
-.sidebar .profile {
+.sidebar-show .profile {
   margin-top: 50px;
   text-align: center;
 }
 
-.sidebar .profile img {
+.sidebar-show .profile img {
   display: block;
   width: 70px;
   height: 70px;
@@ -154,17 +174,17 @@ export default {
   border: 2px solid #ffffff;
 }
 
-.sidebar .profile h3 {
+.sidebar-show .profile h3 {
   color: #ffffff;
   margin: 20px 0 10px;
 }
 
-.sidebar .profile p {
+.sidebar-show .profile p {
   color: rgb(206, 240, 253);
   font-size: 14px;
 }
 
-.sidebar .profile a {
+.sidebar-show .profile a {
   display: inline-block;
   font-size: 12px;
   padding: 10px;
@@ -172,14 +192,12 @@ export default {
   color: rgba(255, 255, 255, 0.61);
 }
 
-.sidebar ul {
+.sidebar-show ul {
   display: inline-block;
   margin-top: 20px;
 }
 
-/* ------------- */
-
-.sidebar ul li a {
+.sidebar-show ul li a {
   display: block;
   padding: 13px 30px;
   border-bottom: 1px solid #10558d;
@@ -188,20 +206,20 @@ export default {
   position: relative;
 }
 
-.sidebar ul li a .icon {
+.sidebar-show ul li a .icon {
   color: #dee4ec;
   width: 30px;
   float: left;
 }
 
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
+.sidebar-show ul li a:hover,
+.sidebar-show ul li a.active {
   color: #253759;
   background: white;
 }
 
-.sidebar ul li a:hover .icon,
-.sidebar ul li a.active .icon {
+.sidebar-show ul li a:hover .icon,
+.sidebar-show ul li a.active .icon {
   color: #0073b0;
 }
 
@@ -226,17 +244,18 @@ export default {
 }
 
 /* Cards */
+
+.column {
+  width: 100%;
+  height: 200px;
+}
+
 .row {
   width: 95%;
   display: grid;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
-}
-
-.column {
-  width: 100%;
-  height: 200px;
 }
 
 .row .column .n-card {
@@ -266,5 +285,84 @@ footer {
   background-color: rgb(255, 255, 255);
   width: 100%;
   height: 100px;
+}
+
+.hamburger {
+  position: absolute;
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.hamburger button {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+}
+
+.hamburger svg path {
+  fill: white;
+}
+
+.hamburger button:hover {
+  cursor: pointer;
+}
+
+.sidebar-hide {
+  display: none;
+}
+
+.row-sidebar-hide {
+  width: 95%;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+.row-sidebar-hide .column .n-card {
+  max-width: 300px;
+  top: 50px;
+}
+
+.row-sidebar-hide .column .calendar {
+  display: flex;
+}
+
+.row-sidebar-hide .column .calendar .date {
+  float: left;
+  font-weight: bold;
+  font-size: 55px;
+  margin: 0px 20px 0px;
+  color: #2ab6b6;
+}
+
+.row-sidebar-hide .column .calendar .month {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0px 0px;
+}
+
+/* svg animation */
+.show {
+  transform: rotate(0deg);
+  transition: 0.3s ease-in;
+}
+
+.hide {
+  transform: rotate(90deg);
+  transition: 0.3s ease-in;
+}
+/* svg animation */
+
+.drawerOn {
+  margin-left: 0px;
+  transition: 0.3s ease-in;
+}
+
+.drawerOff {
+  margin-left: -280px;
+  transition: 0.3s ease-in;
 }
 </style>
