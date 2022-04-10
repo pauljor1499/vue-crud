@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { persons } from "./PersonList.js";
+import { persons } from "../../PersonList.js";
 import { ref } from "vue";
 
 export default {

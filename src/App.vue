@@ -4,7 +4,10 @@
     <router-link to="/add">Add</router-link> |
     <router-link to="/update">Update</router-link> |
     <router-link to="/remove">Delete</router-link> |
-    <router-link to="/viewList">View List</router-link>
+    <router-link to="/viewList">View List</router-link> |
+    <router-link to="/modal">View Modal</router-link> |
+    <router-link to="/nav">NavBar</router-link> |
+    <router-link to="/dashboard">Dashboard</router-link>
   </div>
   <router-view />
 </template>

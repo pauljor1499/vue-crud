@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <n-button @click="showModal = true">Add Person</n-button>
+    <n-button @click="showModal = true">Show Modal</n-button>
   </div>
 
   <n-modal

@@ -4,7 +4,9 @@ import add from '../views/AddPersonPage.vue'
 import update from '../views/UpdatePersonPage.vue'
 import remove from '../views/RemovePerson.vue'
 import viewList from '../views/ViewPersonList.vue'
-import Modal from '../components/add_new_person/Modal.vue'
+import modal from '../components/add_new_person/Modal.vue'
+import nav from '../components/NavBar.vue'
+import dashboard from '../components/Dashboard.vue'
 
 export const routes = [
   {
@@ -40,7 +42,19 @@ export const routes = [
   {
     path: '/modal',
     name: 'Modal',
-    component: Modal
+    component: modal
+  },
+
+  {
+    path: '/nav',
+    name: 'Nav',
+    component: nav
+  },
+
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: dashboard
   },
 
 ]
