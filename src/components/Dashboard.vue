@@ -131,55 +131,6 @@ export default {
   list-style: none;
   font-family: "Open Sans", sans-serif;
 }
-/* nav-bar */
-nav {
-  border-bottom: 1px solid #dee2e6;
-}
-
-footer {
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  height: 100px;
-}
-
-nav h1 {
-  float: left;
-  margin: 5px 0px 0px 5%;
-  font-size: 30px;
-  color: black;
-}
-
-nav ul {
-  list-style-type: none;
-  overflow: hidden;
-  font-size: 18px;
-  margin-right: 5%;
-}
-
-nav ul button {
-  float: right;
-  padding: 10px;
-}
-
-nav ul li a {
-  float: right;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  color: black;
-}
-
-nav ul li a:hover:not(.active, .vl) {
-  background-color: #d0ebff;
-  transition: 0.8s;
-}
-
-.active {
-  background-color: #d0ebff;
-  border-bottom: 1px solid #003a74;
-}
-/* nav-bar */
 
 .sidebar {
   background-color: #253759;
@@ -309,5 +260,11 @@ nav ul li a:hover:not(.active, .vl) {
   font-weight: bold;
   font-size: 16px;
   margin: 10px 0px 0px;
+}
+
+footer {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100px;
 }
 </style>
