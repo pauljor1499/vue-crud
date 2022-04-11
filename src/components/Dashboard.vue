@@ -114,7 +114,7 @@
             </n-card>
           </div>
           <div class="column">
-            <n-card class="calendar">
+            <n-card class="calendar" hoverable>
               <div class="date">21</div>
               <div>
                 <div class="month">December</div>
@@ -365,11 +365,11 @@ footer {
 
 .drawerOn {
   margin-left: 0px;
-  transition: 0.3s ease-in;
+  transition: 0.5s ease-in;
 }
 
 .drawerOff {
   margin-left: -280px;
-  transition: 0.3s ease-in;
+  transition: 0.5s ease-in;
 }
 </style>
