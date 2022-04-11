@@ -7,6 +7,7 @@ import ViewList from "../views/ViewPersonList.vue";
 import Modal from "../components/add_new_person/Modal.vue";
 import Nav from "../components/NavBar.vue";
 import Dashboard from "../components/Dashboard.vue";
+import LandingPage from "../components/LandingPage.vue";
 import Footer from "../components/Footer.vue";
 import Login from "../components/Login.vue";
 import Register from "../components/Register.vue";
@@ -58,6 +59,12 @@ export const routes = [
     path: "/dashboard",
     name: "Dashboard",
     component: Dashboard,
+  },
+
+  {
+    path: "/landingPage",
+    name: "LandingPage",
+    component: LandingPage,
   },
 
   {

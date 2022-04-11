@@ -8,6 +8,7 @@
     <router-link to="/modal">View Modal</router-link> |
     <router-link to="/nav">NavBar</router-link> |
     <router-link to="/dashboard">Dashboard</router-link> |
+    <router-link to="/landingPage">Landing Page</router-link> |
     <router-link to="/footer">Footer</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/register">Register</router-link>
