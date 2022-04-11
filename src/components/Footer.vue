@@ -1,13 +1,17 @@
 <template>
   <footer>
     <div class="footer-head">
-      <div><b>Get conected with us on social networks:</b></div>
-      <div class="brands">
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
+      <div class="content">
+        <div class="message">
+          <b>Get conected with us on social networks:</b>
+        </div>
+        <div class="brands">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
       </div>
     </div>
     <div class="footer-body">
@@ -78,25 +82,27 @@ footer {
 
 footer .footer-head {
   width: 100%;
-  height: 25px;
-  padding: 10px;
-  background-color: #39b1f1;
 }
 
-footer .footer-head div {
+footer .footer-head .content {
+  background-color: #39b1f1;
+  height: 20px;
+  padding: 10px;
+}
+
+footer .footer-head .content .message {
   color: white;
   float: left;
-  margin-left: 25px;
 }
 
-footer .footer-head .brands {
+footer .footer-head .content .brands {
   float: right;
-  margin-right: 50px;
+  margin-right: 25px;
 }
 
-footer .footer-head .brands i {
+footer .footer-head .content .brands a {
   color: white;
-  margin: 10px;
+  padding: 15px;
 }
 
 footer .footer-body {
