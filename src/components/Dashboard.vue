@@ -24,26 +24,34 @@
         <ul>
           <li>
             <a href="#" class="active">
-              <span class="icon"><i class="fas fa-home"></i></span>
-              <span class="item">Dashboard</span>
+              <div>
+                <span class="icon"><i class="fas fa-home"></i></span>
+                <span class="item">Dashboard</span>
+              </div>
             </a>
           </li>
           <li>
             <a href="#">
-              <span class="icon"><i class="fas fa-desktop"></i></span>
-              <span class="item">All Classes</span>
+              <div>
+                <span class="icon"><i class="fas fa-desktop"></i></span>
+                <span class="item">All Classes</span>
+              </div>
             </a>
           </li>
           <li>
             <a href="#">
-              <span class="icon"><i class="fas fa-user-friends"></i></span>
-              <span class="item">Class Periods</span>
+              <div>
+                <span class="icon"><i class="fas fa-user-friends"></i></span>
+                <span class="item">Class Periods</span>
+              </div>
             </a>
           </li>
           <li>
             <a href="#">
-              <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-              <span class="item">Reports</span>
+              <div>
+                <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                <span class="item">Reports</span>
+              </div>
             </a>
           </li>
         </ul>
@@ -74,7 +82,6 @@
                 footer: 'soft',
               }"
               hoverable
-              style="text-align: left"
             >
               <template #header-extra>View</template>
               Card Content
@@ -88,7 +95,6 @@
                 footer: 'soft',
               }"
               hoverable
-              style="text-align: left"
             >
               <template #header-extra>View</template>
               Card Content
@@ -102,7 +108,6 @@
                 footer: 'soft',
               }"
               hoverable
-              style="text-align: left"
             >
               <template #header-extra>View</template>
               Card Content
@@ -153,16 +158,15 @@ export default {
   font-family: "Open Sans", sans-serif;
 }
 
+/* shide-bar show */
 .sidebar-show {
   background-color: #253759;
   width: 280px;
   height: 100%;
-  text-align: center;
 }
 
 .sidebar-show .profile {
   margin-top: 50px;
-  text-align: center;
 }
 
 .sidebar-show .profile img {
@@ -195,33 +199,37 @@ export default {
 .sidebar-show ul {
   display: inline-block;
   margin-top: 20px;
+  width: 85%;
 }
 
 .sidebar-show ul li a {
   display: block;
-  padding: 13px 30px;
   border-bottom: 1px solid #10558d;
   color: #ffffff;
   font-size: 16px;
-  position: relative;
+  padding: 15px;
+}
+
+.sidebar-show ul li a div {
+  text-align: left;
 }
 
 .sidebar-show ul li a .icon {
-  color: #dee4ec;
-  width: 30px;
-  float: left;
+  margin-right: 15px;
 }
 
 .sidebar-show ul li a:hover,
 .sidebar-show ul li a.active {
-  color: #253759;
   background: white;
 }
 
 .sidebar-show ul li a:hover .icon,
-.sidebar-show ul li a.active .icon {
+.sidebar-show ul li a.active .icon,
+.sidebar-show ul li a:hover .item,
+.sidebar-show ul li a.active .item {
   color: #0073b0;
 }
+/* shide-bar show */
 
 /* body */
 .container {
@@ -243,11 +251,11 @@ export default {
   margin: 50px 80px 0;
 }
 
-/* Cards */
-
+/* cards - sidebar showing */
 .column {
   width: 100%;
   height: 200px;
+  text-align: left;
 }
 
 .row {
@@ -280,6 +288,7 @@ export default {
   font-size: 16px;
   margin: 10px 0px 0px;
 }
+/* cards - sidebar showing */
 
 footer {
   background-color: rgb(255, 255, 255);
@@ -309,10 +318,7 @@ footer {
   cursor: pointer;
 }
 
-.sidebar-hide {
-  display: none;
-}
-
+/* cards - sidebar not showing */
 .row-sidebar-hide {
   width: 95%;
   display: grid;
@@ -343,6 +349,7 @@ footer {
   font-size: 16px;
   margin: 10px 0px 0px;
 }
+/* cards - sidebar not showing */
 
 /* svg animation */
 .show {
