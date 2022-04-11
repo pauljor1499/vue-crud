@@ -93,6 +93,7 @@ footer .footer-head .content {
 footer .footer-head .content .message {
   color: white;
   float: left;
+  margin-left: 25px;
 }
 
 footer .footer-head .content .brands {
