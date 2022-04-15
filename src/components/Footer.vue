@@ -126,7 +126,6 @@ footer .footer-body .content #emailAdd {
 }
 
 footer .footer-body .content #emailMessage {
-  text-align: start;
   padding: 10px;
   width: 100%;
   height: 100px;
@@ -137,7 +136,7 @@ footer .footer-body .content #submitButton {
   width: 100px;
   padding: 5px;
   float: right;
-  margin-right: -25px;
+  margin-right: -24px;
 }
 
 footer .footer-body .content a {

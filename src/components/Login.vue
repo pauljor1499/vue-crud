@@ -72,9 +72,10 @@
               </div>
             </li>
             <li>
-              <div>
-                New User? <a href="#"><b>Sign Up</b> </a>
-              </div>
+              New User?
+              <router-link :to="'/register'">
+                <b>Sign Up</b>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -147,19 +148,14 @@ export default {
 .form-header .title {
   float: left;
   font-size: 20px;
-  margin-bottom: 25px;
 }
 
 .error-message {
-  width: 100%;
+  padding: 6px;
   color: red;
   border: 0.5px solid rgb(250, 160, 160);
   background-color: rgb(255, 239, 239);
-}
-
-.form-header .nav {
-  float: right;
-  font-size: 20px;
+  margin-top: 25px;
 }
 
 .form-body {
@@ -168,7 +164,6 @@ export default {
 
 .form-body ul li {
   margin-top: 25px;
-  display: block;
 }
 
 .form-body input {

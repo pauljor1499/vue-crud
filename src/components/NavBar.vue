@@ -10,7 +10,7 @@
           id="signupBtn"
           style="margin: 10px; color: #253759"
           ghost
-          >Register</n-button
+          >Sign Up</n-button
         >
       </router-link>
       <router-link :to="'/login'">
