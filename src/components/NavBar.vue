@@ -46,6 +46,7 @@ export default {};
 }
 nav {
   border-bottom: 1px solid #dee2e6;
+  background-color: white;
 }
 
 nav h1 {

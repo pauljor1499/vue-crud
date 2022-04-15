@@ -1,87 +1,102 @@
 <template>
   <body>
-    <div class="form">
-      <div class="form-header">
-        <div class="logo">Log In</div>
-      </div>
-      <div class="form-body">
-        <ul>
-          <form action="#">
+    <NavBar />
+    <div class="content">
+      <div class="banner"></div>
+      <div class="form">
+        <div class="form-header">
+          <div class="title">Log In</div>
+        </div>
+        <div class="error-message">Invalid username and password.</div>
+        <div class="form-body">
+          <ul>
+            <form action="#">
+              <li>
+                <input
+                  type="email"
+                  name=""
+                  autofocus=""
+                  autocapitalize="none"
+                  required=""
+                  placeholder="Username"
+                  maxlength="20"
+                />
+              </li>
+              <li>
+                <input
+                  :type="eye ? open_eye_pass : close_eye_pass"
+                  name=""
+                  required=""
+                  placeholder="Password"
+                  maxlength="20"
+                />
+                <i
+                  @click="eye = !eye"
+                  :class="eye ? close_eye : open_eye"
+                  id="togglePassword"
+                ></i>
+              </li>
+              <li><button type="submit">LOG IN</button></li>
+            </form>
+            <div class="password-forgot"><a href="#">Forgot Password?</a></div>
             <li>
-              <input
-                type="email"
-                name=""
-                autofocus=""
-                autocapitalize="none"
-                required=""
-                placeholder="Username"
-                maxlength="20"
-              />
+              <hr />
+              <div class="items">
+                <a href="#">
+                  <div class="item">
+                    <img
+                      src="https://outandaboutnow.com/wp-content/uploads/2021/01/f_logo_RGB-Hex-Blue_512.png"
+                      alt="facebook"
+                    />
+                    Facebook
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="item">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"
+                      alt="facebook"
+                    />
+                    Google
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="item">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/814px-Apple_logo_black.svg.png"
+                      alt="facebook"
+                    />
+                    Apple
+                  </div>
+                </a>
+              </div>
             </li>
             <li>
-              <input
-                :type="eye ? open_eye_pass : close_eye_pass"
-                name=""
-                required=""
-                placeholder="Password"
-                maxlength="20"
-              />
-              <i
-                @click="eye = !eye"
-                :class="eye ? close_eye : open_eye"
-                id="togglePassword"
-              ></i>
+              <div>
+                New User? <a href="#"><b>Sign Up</b> </a>
+              </div>
             </li>
-            <li><button type="submit">LOG IN</button></li>
-          </form>
-          <div class="password-forgot"><a href="#">Forgot Password?</a></div>
-          <li>
-            <hr />
-            <div class="items">
-              <a href="#">
-                <div class="item">
-                  <img
-                    src="https://outandaboutnow.com/wp-content/uploads/2021/01/f_logo_RGB-Hex-Blue_512.png"
-                    alt="facebook"
-                  />
-                  Facebook
-                </div>
-              </a>
-              <a href="#">
-                <div class="item">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"
-                    alt="facebook"
-                  />
-                  Google
-                </div>
-              </a>
-              <a href="#">
-                <div class="item">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/814px-Apple_logo_black.svg.png"
-                    alt="facebook"
-                  />
-                  Apple
-                </div>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              New User? <a href="#"><b>Sign Up</b> </a>
-            </div>
-          </li>
-        </ul>
+          </ul>
+        </div>
+        <div class="form-footer"></div>
       </div>
-      <div class="form-footer"></div>
     </div>
   </body>
+  <Footer />
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
+import NavBar from "../components/NavBar.vue";
+import Footer from "../components/Footer.vue";
+
 export default {
+  name: "Login",
+  components: {
+    NavBar,
+    Footer,
+  },
+
   setup() {
     var eye = ref(true);
 
@@ -105,6 +120,15 @@ export default {
   font-family: "Open Sans", sans-serif;
 }
 
+.content {
+  background-color: rgb(247, 247, 247);
+  overflow: hidden;
+}
+
+.banner {
+  float: left;
+}
+
 .form {
   background-color: white;
   width: 30%;
@@ -112,15 +136,25 @@ export default {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 0px rgb(207, 207, 207);
+  float: right;
+  margin: 40px;
 }
 
 .form-header {
   overflow: hidden;
 }
 
-.form-header .logo {
+.form-header .title {
   float: left;
   font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.error-message {
+  width: 100%;
+  color: red;
+  border: 0.5px solid rgb(250, 160, 160);
+  background-color: rgb(255, 239, 239);
 }
 
 .form-header .nav {
@@ -129,7 +163,6 @@ export default {
 }
 
 .form-body {
-  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -171,7 +204,7 @@ export default {
 
 .form-body .items a {
   display: inline-flex;
-  width: 120px;
+  width: 118px;
   border: 0.5px solid rgb(204, 204, 204);
   border-radius: 3px;
   margin: 2px;
