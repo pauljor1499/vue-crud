@@ -17,7 +17,7 @@
 </template>
 
 <style>
-#app {
+/* #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -35,5 +35,14 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
 }
 </style>

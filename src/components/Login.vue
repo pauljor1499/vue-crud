@@ -1,38 +1,99 @@
 <template>
   <body>
-    <div class="main">
-      <input type="checkbox" id="chk" aria-hidden="true" />
-      <div class="signup">
-        <form>
-          <label for="chk" aria-hidden="true">Sign up</label>
-          <input type="text" name="txt" placeholder="User name" required="" />
-          <input type="email" name="email" placeholder="Email" required="" />
-          <input
-            type="password"
-            name="pswd"
-            placeholder="Password"
-            required=""
-          />
-          <button>Sign up</button>
-        </form>
+    <div class="form">
+      <div class="form-header">
+        <div class="logo">Log In</div>
       </div>
-
-      <div class="login">
-        <form>
-          <label for="chk" aria-hidden="true">Login</label>
-          <input type="email" name="email" placeholder="Email" required="" />
-          <input
-            type="password"
-            name="pswd"
-            placeholder="Password"
-            required=""
-          />
-          <button>Login</button>
-        </form>
+      <div class="form-body">
+        <ul>
+          <form action="#">
+            <li>
+              <input
+                type="email"
+                name=""
+                autofocus=""
+                autocapitalize="none"
+                required=""
+                placeholder="Username"
+                maxlength="20"
+              />
+            </li>
+            <li>
+              <input
+                :type="eye ? open_eye_pass : close_eye_pass"
+                name=""
+                required=""
+                placeholder="Password"
+                maxlength="20"
+              />
+              <i
+                @click="eye = !eye"
+                :class="eye ? close_eye : open_eye"
+                id="togglePassword"
+              ></i>
+            </li>
+            <li><button type="submit">LOG IN</button></li>
+          </form>
+          <div class="password-forgot"><a href="#">Forgot Password?</a></div>
+          <li>
+            <hr />
+            <div class="items">
+              <a href="#">
+                <div class="item">
+                  <img
+                    src="https://outandaboutnow.com/wp-content/uploads/2021/01/f_logo_RGB-Hex-Blue_512.png"
+                    alt="facebook"
+                  />
+                  Facebook
+                </div>
+              </a>
+              <a href="#">
+                <div class="item">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"
+                    alt="facebook"
+                  />
+                  Google
+                </div>
+              </a>
+              <a href="#">
+                <div class="item">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/814px-Apple_logo_black.svg.png"
+                    alt="facebook"
+                  />
+                  Apple
+                </div>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div>
+              New User? <a href="#"><b>Sign Up</b> </a>
+            </div>
+          </li>
+        </ul>
       </div>
+      <div class="form-footer"></div>
     </div>
   </body>
 </template>
+
+<script>
+import { ref } from "@vue/reactivity";
+export default {
+  setup() {
+    var eye = ref(true);
+
+    var open_eye = ref("far fa-eye");
+    var close_eye = ref("far fa-eye-slash");
+    var open_eye_pass = ref("password");
+    var close_eye_pass = ref("text");
+
+    return { eye, open_eye, close_eye, open_eye_pass, close_eye_pass };
+  },
+};
+</script>
 
 <style scoped>
 * {
@@ -43,95 +104,102 @@
   list-style: none;
   font-family: "Open Sans", sans-serif;
 }
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-family: "Jost", sans-serif;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-}
-.main {
-  width: 350px;
-  height: 500px;
-  background: red;
-  overflow: hidden;
-  background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38")
-    no-repeat center/ cover;
-  border-radius: 10px;
-  box-shadow: 5px 20px 50px #000;
-}
-#chk {
-  display: none;
-}
-.signup {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-label {
-  color: #fff;
-  font-size: 2.3em;
-  justify-content: center;
-  display: flex;
-  margin: 60px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
-}
-input {
-  width: 60%;
-  height: 20px;
-  background: #e0dede;
-  justify-content: center;
-  display: flex;
-  margin: 20px auto;
-  padding: 10px;
-  border: none;
-  outline: none;
+
+.form {
+  background-color: white;
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px;
   border-radius: 5px;
-}
-button {
-  width: 60%;
-  height: 40px;
-  margin: 10px auto;
-  justify-content: center;
-  display: block;
-  color: #fff;
-  background: #573b8a;
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 20px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
-}
-button:hover {
-  background: #6d44b8;
-}
-.login {
-  height: 460px;
-  background: #eee;
-  border-radius: 60% / 10%;
-  transform: translateY(-180px);
-  transition: 0.8s ease-in-out;
-}
-.login label {
-  color: #573b8a;
-  transform: scale(0.6);
+  box-shadow: 0px 0px 5px 0px rgb(207, 207, 207);
 }
 
-#chk:checked ~ .login {
-  transform: translateY(-500px);
+.form-header {
+  overflow: hidden;
 }
-#chk:checked ~ .login label {
-  transform: scale(1);
+
+.form-header .logo {
+  float: left;
+  font-size: 20px;
 }
-#chk:checked ~ .signup label {
-  transform: scale(0.6);
+
+.form-header .nav {
+  float: right;
+  font-size: 20px;
+}
+
+.form-body {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.form-body ul li {
+  margin-top: 25px;
+  display: block;
+}
+
+.form-body input {
+  width: 96.5%;
+  height: 20px;
+  padding: 6px;
+  border: 0.5px solid rgb(204, 204, 204);
+}
+
+#togglePassword {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.form-body button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #253759;
+}
+
+.form-body .password-forgot {
+  float: left;
+}
+
+.form-body .items {
+  overflow: hidden;
+}
+
+.form-body .items a {
+  display: inline-flex;
+  width: 120px;
+  border: 0.5px solid rgb(204, 204, 204);
+  border-radius: 3px;
+  margin: 2px;
+  padding: 5px;
+}
+
+.form-body .items .item {
+  display: inline-flex;
+  margin: auto;
+}
+
+.form-body a img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.form-body hr {
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+.form-body button:hover {
+  background-color: #0073b0;
+  cursor: pointer;
+}
+
+.form-body .items a:hover {
+  background-color: rgb(245, 245, 245);
 }
 </style>

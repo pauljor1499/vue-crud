@@ -109,13 +109,13 @@ footer .footer-head .content .brands a {
 footer .footer-body {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1.2fr;
   background-color: #0073b0;
-  border-bottom: 1px solid #64b9ff;
+  border-bottom: 2px solid #64b9ff;
 }
 
 footer .footer-body .content {
-  padding: 40px 60px 40px 40px;
+  padding: 40px 40px 40px 40px;
   color: white;
   text-align: left;
 }

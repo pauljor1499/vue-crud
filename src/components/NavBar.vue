@@ -44,7 +44,6 @@ export default {};
   list-style: none;
   font-family: "Open Sans", sans-serif;
 }
-/* nav */
 nav {
   border-bottom: 1px solid #dee2e6;
 }
@@ -56,9 +55,6 @@ nav h1 {
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   font-size: 18px;
   margin-right: 5%;
@@ -71,10 +67,7 @@ nav ul button {
 
 nav ul li a {
   float: right;
-  display: block;
-  text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
   color: black;
 }
 
@@ -87,5 +80,4 @@ nav ul li a:hover:not(.active, .vl) {
   background-color: #d0ebff;
   border-bottom: 1px solid #003a74;
 }
-/* nav */
 </style>
